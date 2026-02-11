@@ -5,6 +5,8 @@
 options(repos = c(RSPM = "https://packagemanager.posit.co/cran/__linux__/noble/latest"))
 # 2. install torch
 install.packages("torch")
+# 3. Load and reinstall torch
+torch::install_torch()
 
 
 # Other packages
