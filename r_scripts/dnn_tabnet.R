@@ -46,7 +46,7 @@ heart_cv <- vfold_cv(heart_train, v = 10)
 
 ## Specify model ----
 dnn_mod <- 
-  mod <- tabnet(epochs = 50, batch_size = 128) %>%
+  mod <- tabnet(epochs = 50, batch_size = 350) %>%
   set_engine("torch") %>%
   set_mode("classification")
 
