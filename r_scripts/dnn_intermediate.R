@@ -167,7 +167,7 @@ hist %>%
 # No need to refit since we use callbacks to save the best model
 # see ?luz_callback_keep_best_model()
 
-# Predict testting set ---------------------------------------------------
+# Predict testing set ---------------------------------------------------
 
 y_pred <- fitted %>% predict(test_dl)
 y_true <- ds_tensor$y[test_ds$indices] %>% as_array()
@@ -175,7 +175,7 @@ y_true <- ds_tensor$y[test_ds$indices] %>% as_array()
 dat_pred <- 
   y_pred %>% 
   as_array() %>% 
-  as_data_frame() %>% 
+  as_tibble() %>% 
   rename(prob = V1) %>% 
   mutate(
     pred = ifelse(prob > 0.5, 1, 0),

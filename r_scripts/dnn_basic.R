@@ -167,14 +167,14 @@ fitted2 <-
     valid_data = val_dl
 )
 
-# Predict testting set ---------------------------------------------------
+# Predict testing set ---------------------------------------------------
 
 y_pred <- fitted2 %>% predict(test_dl)
 
 dat_pred <- 
   y_pred %>% 
   as_array() %>% 
-  as_data_frame() %>% 
+  as_tibble() %>% 
   rename(prob = V1) %>% 
   mutate(
     pred = ifelse(prob > 0.5, 1, 0),
