@@ -185,7 +185,7 @@ dat_pred
 
 # Evaluate ---------------------------------------------------------------
 
-fitted %>% evaluate(test_dl) # Less accurate
+fitted2 %>% evaluate(test_dl) # Less accurate
 
 # Confusion matrix
 dat_pred %>% 
@@ -205,3 +205,7 @@ dat_pred  %>%
   roc_auc(true, prob, event_level = "second")
 
 
+# Saving and load the model ----------------------------------------------
+
+# luz_save(fitted, "dnn_model.pt")
+# dnn_mod <- luz_load("dnn_model.pt")
